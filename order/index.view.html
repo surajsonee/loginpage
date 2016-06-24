@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <h2>Create Order</h2>
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Please select state
+    </div>
+    <form role="form" novalidate class="form-horizontal" name='orderForm'>
+        <div class="form-group">
+            <label for="from" class="col-sm-2 control-label">From:</label>
+            <div class="col-sm-4 typeahead">
+                <input type="text" ng-model="ngModelOptionsSelectedFrom" id="from"
+                       ng-model-options="modelOptions"
+                       uib-typeahead="zone.Locality_Index for zone in zones | filter:$viewValue | limitTo:8"
+                       class="form-control input-sm" required>
+            </div>
+            <label for="to" class="col-sm-2 control-label">To:</label>
+            <div class="col-sm-4 typeahead">
+                <input type="text" ng-model="ngModelOptionsSelectedTo" id="to"
+                       ng-model-options="modelOptions"
+                       uib-typeahead="zone.Locality_Index for zone in zones | filter:$viewValue | limitTo:8"
+                       class="form-control input-sm" required>
+            </div>
+        </div>
+
+        <div class="form-group" data-ng-repeat="pack in order.packages">
+            <label class="col-sm-2 control-label">#{{pack.id}}</label>
+            <label for="items" class="col-sm-1 control-label">items:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="items" ng-model="pack.items" required>
+            </div>
+
+            <label for="length" class="col-sm-1 control-label">length (cm):</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="length" ng-model="pack.length" required>
+            </div>
+
+            <label for="width" class="col-sm-1 control-label">width (cm):</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="width" ng-model="pack.width" required>
+            </div>
+
+            <label for="height" class="col-sm-1 control-label">height (cm):</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="height" ng-model="pack.height" required>
+            </div>
+
+            <label for="weight" class="col-sm-1 control-label">weight (kg):</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="weight" ng-model="pack.weight" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-1 control-label" id="pack_ex">Packages:</label>
+            <div class="col-sm-2">
+                <button type="button" class="btn btn-default btn-sm" ng-click="addNewPackage()">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="removeNewPackage()">
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <label class="col-sm-1 control-label">Total:</label>
+            <label for="cubes" class="col-sm-1 control-label">Volume:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="cubes"
+                       placeholder="{{order.total_cubes}}" readonly>
+            </div>
+
+            <label for="total_weight" class="col-sm-1 control-label">Weight:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="total_weight"
+                       placeholder="{{order.total_weight}}" readonly>
+            </div>
+
+            <label for="total_items" class="col-sm-1 control-label">items:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="total_items"
+                       placeholder="{{order.total_items}}" readonly>
+            </div>
+            <label for="average_item_weight" class="col-sm-1 control-label">Average Item Weight:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="average_item_weight"
+                       placeholder="{{order.average_item_weight}}" readonly>
+            </div>
+
+        </div>
+
+        <button class="btn btn-success" ng-click="getPrice()" type="submit" ng-disabled='orderForm.$invalid'>Submit</button>
+    </form>
+</div>

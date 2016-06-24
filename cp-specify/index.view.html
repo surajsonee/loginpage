@@ -1,0 +1,181 @@
+<div class="container-fluid">
+    <h2>You Select Couriers Please</h2>
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        Please enter extra info for shipment
+    </div>
+    <form role="form" novalidate class="form-horizontal" name="cpSpecForm">
+        <div class="form-group">
+            <label for="items" class="col-sm-1 control-label">Items:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="items"
+                       placeholder="{{order.total_items}}" readonly>
+            </div>
+            <label for="weight" class="col-sm-1 control-label">Weight:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="weight"
+                       placeholder="{{order.total_weight}}" readonly>
+            </div>
+            <label for="volume" class="col-sm-1 control-label">Volume:</label>
+            <div class="col-sm-1">
+                <input type="text" class="form-control" id="volume"
+                       placeholder="{{order.total_cubes}}" readonly>
+            </div>
+            <lable for="alt" class="col-sm-3 control-label"><b>Authority to Leave Flag:</b></lable>
+            <div class="col-sm-3">
+                <select name="singleSelect" class="form-control"
+                        id="alt" ng-model="alt" required>
+                    <option value="1">Okay to Leave</option>
+                    <option value="0">Signature required</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="reference" class="col-sm-1 control-label">Reference:</label>
+            <div class="col-sm-11">
+                <input type="text" class="form-control" id="reference" ng-model="reference" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <h4 style="text-align: center"><b>Delivery information</b></h4>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-6">
+                <h4 style="text-align: center"><b>Pickup</b></h4>
+            </div>
+            <div class="col-sm-6">
+                <h4 style="text-align: center"><b>Delivery</b></h4>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-addr0" class="col-sm-2 control-label">Sender Name:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-addr0" ng-model="form.paddr0" required>
+            </div>
+            <label for="d-addr0" class="col-sm-2 control-label">Receiver Name:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-addr0" ng-model="form.daddr0" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-addr1" class="col-sm-2 control-label">Address line 1:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-addr1" ng-model="form.paddr1" required>
+            </div>
+            <label for="d-addr1" class="col-sm-2 control-label">Address line 1:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-addr1" ng-model="form.daddr1" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-addr2" class="col-sm-2 control-label">Address line 2:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-addr2" ng-model="form.paddr2" required>
+            </div>
+            <label for="d-addr2" class="col-sm-2 control-label">Address line 2:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-addr2" ng-model="form.daddr2" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-addr3" class="col-sm-2 control-label">Address line 3:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-addr3" ng-model="form.paddr3" required>
+            </div>
+            <label for="d-addr3" class="col-sm-2 control-label">Address line 3:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-addr3" ng-model="form.daddr3" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-suburb" class="col-sm-2 control-label">Suburb/Town/City:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="p-suburb"
+                       placeholder="{{ order.from_data.suburb }}" readonly>
+            </div>
+            <label for="d-suburb" class="col-sm-2 control-label">Suburb/Town/City:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="d-suburb"
+                       placeholder="{{ order.to_data.suburb }}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-postcode" class="col-sm-2 control-label">Postcode:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="p-postcode"
+                       placeholder="{{ order.from_data.postcode }}" readonly>
+            </div>
+            <label for="d-postcode" class="col-sm-2 control-label">Postcode:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="d-postcode"
+                       placeholder="{{ order.to_data.postcode }}" readonly>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-contact" class="col-sm-2 control-label">Sender Contact:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-contact" ng-model="form.pcontact" required>
+            </div>
+            <label for="d-contact" class="col-sm-2 control-label">Receiver Contact:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-contact" ng-model="form.dcontact" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-phone" class="col-sm-2 control-label">Sender Phone Number:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-phone" ng-model="form.pphone" required>
+            </div>
+            <label for="d-phone" class="col-sm-2 control-label">Receiver Phone Number:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-phone" ng-model="form.dphone" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="p-email" class="col-sm-2 control-label">Sender Email:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="p-email" ng-model="form.pemail" required>
+            </div>
+            <label for="d-email" class="col-sm-2 control-label">Receiver Email:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="d-email" ng-model="form.demail" required>
+            </div>
+        </div>
+
+        <button class="btn btn-success" type="submit" ng-click="save()" ng-if="!order.manifest" ng-disabled='cpSpecForm.$invalid'>save</button>
+        <button class="btn btn-success" type="submit" ng-click="getPDF()" ng-if="order.manifest">Get PDF</button>
+    </form>
+
+    {{order}}
+
+</div>

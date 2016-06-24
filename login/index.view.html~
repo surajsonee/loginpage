@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+        
+        <h3 class="form-title font-green" align="center">Sign In</h3>
+        <form name="form" ng-submit="form.$valid && vm.login()" novalidate>
+            <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.username.$invalid }">
+                <!--<label for="username">E-mail</label> -->
+                <input type="text" placeholder="Username" name="username"  class="form-control" ng-model="vm.username" required/>
+                <div ng-messages="form.$submitted && form.username.$error" class="help-block">
+                    <div ng-message="required">E-mail is required</div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error': form.$submitted && form.password.$invalid }">
+                <!--<label for="password">Password</label> -->
+                <input type="password" placeholder="Password" name="password" class="form-control" ng-model="vm.password" required/>
+                <div ng-messages="form.$submitted && form.password.$error" class="help-block">
+                    <div ng-message="required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button ng-disabled="vm.loading" class="btn green uppercase">LOGIN</button>
+                <img ng-if="vm.loading"
+                     src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>&nbsp;
+		<label class="rememberme check mt-checkbox mt-checkbox-outline">
+                        <input type="checkbox" name="remember" value="1" />Remember
+                        <span></span>
+                    </label>
+		<a href="javascript:;" id="forget-password" class="forget-password">&nbsp;&nbsp;&nbsp;Forgot Password?</a>            
+		</div><hr>
+	       <div class="form-group">
+		<label>Or login with</label> 
+		<a><img src="./social/facebook.png"></a>
+		<a><img src="./social/twitter.png"></a>
+		<a><img src="./social/google-plus.png"></a>
+		<a><img src="./social/linkedin.png"></a>           
+		</div>
+            <div ng-if="vm.error" class="alert alert-danger">{{vm.error}}</div><br>
+        </form><br>
+	<div ng-if="vm.error" class="alert alert-danger">{{vm.error}}</div>
+    </div>
+<div class="col-sm-8 col-sm-offset-3">
+	<a href="javascript:;" id="register-btn" class="uppercase">Create an account</a>
+		
+	</div>
+</div>
+<style>
+#register-btn {
+    color: #fff;
+    font-size: 15px;
+    padding-left: 90px;
+}
+.login-options {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+ .form-control{
+ background-color: #dde3ec;
+    border: 1px solid #dde3ec;
+    color: #8290a3;
+    height: 43px;
+}
+</style>

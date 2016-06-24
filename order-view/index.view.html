@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <span><h2>Order:</h2></span>
+    <form role="form" novalidate class="form-horizontal" name="orderViewForm">
+        <div class="form-group" data-ng-repeat="(key, value) in view">
+            <label for="{{ key }}" class="col-sm-3 control-label">{{ key }}:</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="{{ key }}"
+                       placeholder="{{ value }}" readonly>
+            </div>
+        </div>
+    </form>
+    <button class="btn btn-success" ng-click="back()" >Back</button>
+    <button class="btn btn-success" ng-click="getPDF()" >GetPDF</button>
+</div>

@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <h2>State Selector</h2>
+    <div class="alert alert-info">
+        Please select state
+    </div>
+    <form role="form" novalidate class="form-horizontal">
+        <div class="form-group">
+            <label for="from" class="col-sm-2 control-label">From:</label>
+            <div class="col-sm-4 typeahead">
+                <input type="text" ng-model="ngModelOptionsSelectedFrom" id="from"
+                       ng-model-options="modelOptions"
+                       uib-typeahead="zone.Locality_Index for zone in zones | filter:$viewValue | limitTo:8"
+                       class="form-control input-sm">
+            </div>
+            <label for="to" class="col-sm-2 control-label">To:</label>
+            <div class="col-sm-4 typeahead">
+                <input type="text" ng-model="ngModelOptionsSelectedTo" id="to"
+                       ng-model-options="modelOptions"
+                       uib-typeahead="zone.Locality_Index for zone in zones | filter:$viewValue | limitTo:8"
+                       class="form-control input-sm">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <lable class="col-sm-2 control-label"><b>Parameters:</b></lable>
+            <label for="length" class="col-sm-1 control-label">length (cm):</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="length" ng-model="form.length">
+            </div>
+
+            <label for="width" class="col-sm-1 control-label">width (cm):</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="width" ng-model="form.width">
+            </div>
+
+            <label for="height" class="col-sm-2 control-label">height (cm):</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="height" ng-model="form.height">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <lable class="col-sm-2 control-label"><b>Weight parameters:</b></lable>
+            <label for="weight" class="col-sm-1 control-label">weight (kg):</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="weight" ng-model="form.weight">
+            </div>
+
+            <label for="cubes" class="col-sm-1 control-label">cubes:</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="cubes"
+                       placeholder="{{ form.length / 100 * form.width / 100 * form.height /100 }}" readonly>
+            </div>
+
+            <label for="cubic_weight" class="col-sm-2 control-label">Cubic weight:</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="cubic_weight"
+                       placeholder="{{ form.length / 100 * form.width / 100 * form.height / 100  * form.weight}}"
+                       readonly>
+            </div>
+
+        </div>
+
+
+        <button class="btn btn-success" ng-click="save()" type="submit">Submit</button>
+</div>
+</div>
+<div class="container-fluid" ng-show="triger">
+    {{prices}}
+    <table class="table">
+        <thead class="thead-inverse">
+        <tr>
+            <th>carrier</th>
+            <th>carrier_service</th>
+            <th>price</th>
+            <th>surcharge</th>
+            <th>surcharge_flat</th>
+            <th>tax</th>
+            <th>total</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="price in prices" ng-if="price != 'There is no rates for you!'">
+            <td>{{ price.carrier }}</td>
+            <td>{{ price.carrier_service }}</td>
+            <td>{{ price.price }}</td>
+            <td>{{ price.surcharge }}</td>
+            <td>{{ price.surcharge_flat }}</td>
+            <td>{{ price.tax }}</td>
+            <td>{{ price.total }}</td>
+        </tr>
+    </table>
+</div>

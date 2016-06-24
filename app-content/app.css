@@ -1,0 +1,54 @@
+.help-block {
+    font-size: 12px;
+}
+
+p.title {
+    font-size: 10pt;
+}
+
+p.subtitle {
+    font-size: 8pt;
+}
+
+div#suburb_selector {
+    text-shadow: 2px 2px 1px #888888;
+}
+
+div#suburb_selector:hover {
+    box-shadow: 0 5px 15px #888888;
+}
+
+.typeahead .custom-popup-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.typeahead .custom-popup-wrapper > .message {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    color: #868686;
+}
+
+.typeahead .custom-popup-wrapper > .dropdown-menu {
+    position: static;
+    float: none;
+    display: block;
+    min-width: 160px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.form-control {
+    font-size: 14px;
+    padding: 1px 12px;
+}
+
+.control-label {
+    font-size: 12px;
+}

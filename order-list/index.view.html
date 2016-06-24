@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <span><h2>My orders</h2></span>
+    <table class="table">
+        <thead class="thead-inverse">
+        <tr>
+            <th>ID</th>
+            <th>created_date</th>
+            <th>carrier</th>
+            <th>carrier_service</th>
+            <th>total_items</th>
+            <th>total_weight</th>
+            <th>total_volume</th>
+            <th>price</th>
+            <th>surcharge</th>
+            <th>tax</th>
+            <th>atl</th>
+            <th>pickup_datetime</th>
+            <th>select</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="order in orders">
+            <th scope="row">{{$index + 1}}</th>
+            <th>{{ order.created_date }}</th>
+            <th>{{ order.carrier }}</th>
+            <th>{{ order.carrier_service }}</th>
+            <th>{{ order.total_items }}</th>
+            <th>{{ order.total_weight }}</th>
+            <th>{{ order.total_volume }}</th>
+            <th>{{ order.price }}</th>
+            <th>{{ order.surcharge }}</th>
+            <th>{{ order.tax }}</th>
+            <th>{{ order.atl }}</th>
+            <th>{{ order.pickup_datetime }}</th>
+            <td>
+                <button type="button" class="btn btn-success btn-sm" ng-click="select(order)">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-success" ng-click="back()" >Back</button>
+</div>

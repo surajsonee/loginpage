@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>carrier</th>
+            <th>carrier_service</th>
+            <th>price</th>
+            <th>surcharge</th>
+            <th>surcharge_flat</th>
+            <th>tax</th>
+            <th>total</th>
+            <th>delivery_time</th>
+            <th>select</th>
+
+        </tr>
+        </thead>
+        <tr ng-repeat="price in prices" ng-if="price != 'There is no rates for you!'">
+            <td>{{ price.carrier }}</td>
+            <td>{{ price.carrier_service }}</td>
+            <td>{{ price.price }}</td>
+            <td>{{ price.surcharge }}</td>
+            <td>{{ price.surcharge_flat }}</td>
+            <td>{{ price.tax }}</td>
+            <td>{{ price.total }}</td>
+            <td>{{ price.delivery_time }}</td>
+
+            <td>
+                <button type="button" class="btn btn-success btn-sm" ng-click="select(price)">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-success" ng-click="back()" >Back</button>
+</div>

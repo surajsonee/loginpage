@@ -1,0 +1,14 @@
+/* here you can put your own css to customize and override the theme */
+
+body{
+	padding-bottom: 52px!important;
+}
+
+.page-header .page-header-top .page-logo .logo-default{
+    margin: 10px 0 0 0;
+    height: 45px;
+}
+
+.page-header .page-header-menu .hor-menu{
+	width: 100%;
+}
