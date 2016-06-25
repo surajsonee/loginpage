@@ -11,7 +11,7 @@ h2 {
     color: #00bfff;
 }
 .col-sm-offset-2 {
-margin-top: 150px;
+margin-top: 55px;
 height: 400px;
 }
 .col-sm-offset-3 {
@@ -68,5 +68,16 @@ label {
     border: 1px solid #dde3ec;
     color: #8290a3;
     height: 43px;
+}
+.ng-scope {
+    background-color: white;
+}
+.container.ng-scope {
+    background-color: #364150 !important;
+}
+.logo {
+    background-color: #364150;
+    text-align: center;
+    padding-top: 78px;
 }
 

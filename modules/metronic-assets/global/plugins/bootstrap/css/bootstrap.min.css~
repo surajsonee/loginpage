@@ -51,7 +51,7 @@ label {
 }
 
 #register-btn {
-    color: #fff;
+    color: #c3cedd;
     font-size: 15px;
     padding-left: 88px;
     font-weight: 600;
@@ -68,5 +68,16 @@ label {
     border: 1px solid #dde3ec;
     color: #8290a3;
     height: 43px;
+}
+.ng-scope {
+    background-color: white;
+}
+.container.ng-scope {
+    background-color: #364150 !important;
+}
+.logo {
+    background-color: #364150;
+    text-align: center;
+    padding-top: 78px;
 }
 

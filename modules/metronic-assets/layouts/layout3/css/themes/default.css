@@ -342,7 +342,8 @@ Page Footer
 
 .page-footer {
 color: #a2abb7;
-margin-left: 510px; }
+margin-left: 510px;
+margin-top: -6px; }
 
 /* Scroll Top */
 .scroll-to-top > i {
